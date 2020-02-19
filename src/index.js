@@ -28,3 +28,6 @@ const App = () => {
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
+
+
+// This is a comment to be removed later 
