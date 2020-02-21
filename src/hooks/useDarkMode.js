@@ -3,23 +3,23 @@ import React, { useEffect } from 'react';
 
 
 export const useDarkMode = (DarkMode) => {
-    const [mode, setMode] = useLocalStorage(DarkMode);
+    const [mode, setMode] = useLocalStorage('DarkMode');
 
-    const setModeValue =value => {
-        setMode(value);
-    }
+    // const setModeValue =value => {
+    //     setMode(value);
+    // }
 
     useEffect(() => {
-   const rootElement = document.getElementById("root");
+//    const rootElement = document.getElementById("root");
 
-        if (DarkMode) {
-       rootElement.classList.add('dark-mode');
-        } else {
-            rootElement.classList.remove('dark-mode');
+        if (mode === true) {
+       document.body.classList.add('dark-mode');
+        } else if (mode === false){
+            document.body.classList.remove('dark-mode');
         }
-}, [])
+}, [mode])
     
-    return [mode, setModeValue];
+    return [mode, setMode];
 }
 
 
